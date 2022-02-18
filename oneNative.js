@@ -1,42 +1,17 @@
-import {BaseComponent} from './oneCore.js';
+import {BaseComponent, Component, readFlavor} from '@onejs-dev/onecore';
 import {ActivityIndicator as activityIndicator, Button as button, FlatList as flatList, Image as image, 
-	ImageBackground as imageBackground, KeyboardAvoidingView as keyboardAvoidingView, Modal as modal, 
-	Pressable as pressable, RefreshControl as refreshControl, ScrollView as scrollView, SectionList as sectionList, 
-	StatusBar as statusBar, Switch as switch, Text as text, TextInput as textInput, TouchableHighlight as touchableHighlight, 
-	TouchableOpacity as touchableOpacity, TouchableWithoutFeedback as touchableWithoutFeedback, View as view, 
-	VirtualizedList as virtualizedList, DrawerLayoutAndroid as drawerLayoutAndroid, 
-	TouchableNativeFeedback as touchableNativeFeedback, InputAccessoryView as inputAccessoryView, 
-	SafeAreaView as safeAreaView} from 'react-native';
+    ImageBackground as imageBackground, KeyboardAvoidingView as keyboardAvoidingView, Modal as modal, 
+    Pressable as pressable, RefreshControl as refreshControl, ScrollView as scrollView, SectionList as sectionList, 
+    StatusBar as statusBar, Switch as RNSwitch, Text as text, TextInput as textInput, TouchableHighlight as touchableHighlight, 
+    TouchableOpacity as touchableOpacity, TouchableWithoutFeedback as touchableWithoutFeedback, View as view, 
+    VirtualizedList as virtualizedList, DrawerLayoutAndroid as drawerLayoutAndroid, 
+    TouchableNativeFeedback as touchableNativeFeedback, InputAccessoryView as inputAccessoryView, 
+    SafeAreaView as safeAreaView} from 'react-native';
 
-export const ActivityIndicator = BaseComponent('ActivityIndicator', false, activityIndicator);
-export const Button = BaseComponent('Button', false, button);
-export const FlatList = BaseComponent('FlatList', false, flatList);
-export const Image = BaseComponent('Image', false, image);
-export const ImageBackground = BaseComponent('ImageBackground', true, imageBackground);
-export const KeyboardAvoidingView = BaseComponent('KeyboardAvoidingView', true, keyboardAvoidingView);
-export const Modal = BaseComponent('Modal', true, modal);
-export const Pressable = BaseComponent('Pressable', true, pressable);
-export const RefreshControl = BaseComponent('RefreshControl', false, refreshControl);
-export const ScrollView = BaseComponent('ScrollView', true, scrollView);
-export const SectionList = BaseComponent('SectionList', false, sectionList);
-export const StatusBar = BaseComponent('StatusBar', false, statusBar);
-export const Switch = BaseComponent('Switch', false, switch);
-export const Text = BaseComponent('Text', true, text);
-export const TextInput = BaseComponent('TextInput', false, textInput);
-export const TouchableHighlight = BaseComponent('TouchableHighlight', true, touchableHighlight);
-export const TouchableOpacity = BaseComponent('TouchableOpacity', true, touchableOpacity);
-export const TouchableWithoutFeedback = BaseComponent('TouchableWithoutFeedback', true, touchableWithoutFeedback);
-export const View = BaseComponent('View', true, view);
-export const VirtualizedList = BaseComponent('VirtualizedList', false, virtualizedList);
-export const DrawerLayoutAndroid = BaseComponent('DrawerLayoutAndroid', true, drawerLayoutAndroid);
-export const TouchableNativeFeedback = BaseComponent('TouchableNativeFeedback', true, touchableNativeFeedback);
-export const InputAccessoryView = BaseComponent('InputAccessoryView', true, inputAccessoryView);
-export const SafeAreaView = BaseComponent('SafeAreaView', true, safeAreaView);
-
-import { View as RNView, Text, Button, TextInput, Switch, TouchableOpacity} from './oneNative.js';
+// import { View as RNView, Text, Button, TextInput, Switch, TouchableOpacity} from './oneNative.js';
 import { Platform, Animated, Easing } from 'react-native';
 import React from 'react';
-import { BaseComponent, Component, read, update, app, readFlavor} from './oneCore.js';
+// import { BaseComponent, } from '@onejs-dev/onecore';
 import { NativeRouter, useLocation, useMatch, useNavigate} from "react-router-native";//https://v5.reactrouter.com/native/guides/quick-start
 
 import {LinearGradient} from 'expo-linear-gradient';
@@ -50,8 +25,34 @@ import Svg, {SvgXml} from 'react-native-svg';
 
 import {AntDesign, Entypo, EvilIcons, Feather, FontAwesome, FontAwesome5, Fontisto, Ionicons, MaterialCommunityIcons, MaterialIcons, Octicons, SimpleLineIcons} from '@expo/vector-icons'; 
 
-import myIcon from './assets/add.svg';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';//To be able to fetch Icon svg file
+
+export const ActivityIndicator = BaseComponent('ActivityIndicator', false, activityIndicator);
+export const Button = BaseComponent('Button', false, button);
+export const FlatList = BaseComponent('FlatList', false, flatList);
+export const Image = BaseComponent('Image', false, image);
+export const ImageBackground = BaseComponent('ImageBackground', true, imageBackground);
+export const KeyboardAvoidingView = BaseComponent('KeyboardAvoidingView', true, keyboardAvoidingView);
+export const Modal = BaseComponent('Modal', true, modal);
+export const Pressable = BaseComponent('Pressable', true, pressable);
+export const RefreshControl = BaseComponent('RefreshControl', false, refreshControl);
+export const ScrollView = BaseComponent('ScrollView', true, scrollView);
+export const SectionList = BaseComponent('SectionList', false, sectionList);
+export const StatusBar = BaseComponent('StatusBar', false, statusBar);
+export const Switch = BaseComponent('Switch', false, RNSwitch);
+export const Text = BaseComponent('Text', true, text);
+export const TextInput = BaseComponent('TextInput', false, textInput);
+export const TouchableHighlight = BaseComponent('TouchableHighlight', true, touchableHighlight);
+export const TouchableOpacity = BaseComponent('TouchableOpacity', true, touchableOpacity);
+export const TouchableWithoutFeedback = BaseComponent('TouchableWithoutFeedback', true, touchableWithoutFeedback);
+export const RNView = BaseComponent('View', true, view);
+export const VirtualizedList = BaseComponent('VirtualizedList', false, virtualizedList);
+export const DrawerLayoutAndroid = BaseComponent('DrawerLayoutAndroid', true, drawerLayoutAndroid);
+export const TouchableNativeFeedback = BaseComponent('TouchableNativeFeedback', true, touchableNativeFeedback);
+export const InputAccessoryView = BaseComponent('InputAccessoryView', true, inputAccessoryView);
+export const SafeAreaView = BaseComponent('SafeAreaView', true, safeAreaView);
+
+
 
 const IconAntDesign = BaseComponent('AntDesign', false, AntDesign);
 const IconEntypo = BaseComponent('Entypo', false, Entypo);
@@ -490,7 +491,7 @@ export const Icon = Component('Icon', false, ({icon = 'iosClose', iconFont = [],
     // console.log('MY ICONNNNN')
     //console.log(folder + '/' + icon + '.svg#' + icon)
     // console.log(require('./assets/add.svg'));
-    let path = require('./assets/add.svg');
+    // let path = require('add.svg');
     // let mySVG = fetchSvgData(path);
     // console.log(mySVG);
     //return svg({style: {width: 50, height: 50, backgroundColor: 'pink'}})(Text()(myIcon));
@@ -525,7 +526,7 @@ export const Icon = Component('Icon', false, ({icon = 'iosClose', iconFont = [],
             catch(error) {console.error("fetchSvgData: SVG not found.", e);}
             // return responseXML;
         }
-        fetchSvgData(require('./assets/ios-alarm.svg')); 
+        // fetchSvgData(require('add.svg')); 
     }, [])
 
     // return View({style: {width: 50, height: 50, backgroundColor: 'pink'}})(Text()(svgXml));
