@@ -1,6 +1,6 @@
 {
   "name": "@onejs-dev/onenative",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "oneNative.js",
   "scripts": {
