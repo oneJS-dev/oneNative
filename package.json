@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/onejs-dev/oneNative#readme",
   "dependencies": {
-    "@onejs-dev/onecore": "^0.0.6",
-    "@onejs-dev/onespecifics": "^0.0.3",
+    "@onejs-dev/onecore": "^0.0.11",
+    "@onejs-dev/onespecifics": "^0.0.4",
     "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-native-community/datetimepicker": "^5.1.0",
     "@react-native-community/masked-view": "^0.1.11",
